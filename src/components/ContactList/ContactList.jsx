@@ -1,14 +1,15 @@
-import { nanoid } from 'nanoid';
 import ContactListItem from './ContactListItem';
 
-const ContactList = ({ contacts }) => {
+const ContactList = ({ contacts, onClick }) => {
   return (
     <ul>
       {contacts.map(contact => (
         <ContactListItem
-          key={nanoid()}
+          key={contact.id}
+          id={contact.id}
           name={contact.name}
           number={contact.number}
+          onClick={onClick}
         />
       ))}
     </ul>

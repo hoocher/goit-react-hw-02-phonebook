@@ -1,9 +1,15 @@
-const ContactListItem = ({ name, number }) => {
+import { LiItem } from './ContactList.styled';
+
+const ContactListItem = ({ id, name, number, onClick }) => {
   return (
-    <li>
+    <LiItem>
       <span>{name}: </span>
       <span> {number} </span>
-    </li>
+      <button type="button" onClick={() => onClick(id)}>
+        Delete
+      </button>
+    </LiItem>
   );
 };
+
 export default ContactListItem;
